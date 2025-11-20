@@ -2,12 +2,8 @@
 ## Introduktion
 Epoxi är en form av tvåkomponentshärdplast som bland annat används som golvyta i lokaler så som industrier, storkök och garage. Epoxi är ett populärt alternativ då materialet är så pass slitstarkt. Epoxi är ett fuktkänsligt material och en för hög luftfuktighet gör att härdprocessen (torkningstiden) går för långsamt och man riskerar golvets hållbarhet. En för låg luftfuktighet gör istället att materialet härdar (torkar) för fort och processen blir extremt stressig. Därför är det av stor vikt att mäta luftfuktighet i lokaler där epoxi ska användas.  
 
-<<<<<<< HEAD
-**Såhär kan Epoxi se ut:**
-=======
-Såhär kan epoxi se ut:
+**Såhär kan epoxi se ut:**
 
->>>>>>> 1de6bb4db60c7ab9094a11ad711fd93ba8e2e091
 ![Bild på epoxigolv](bilder_slutprojekt/image-000-1-830x701.jpg)
 
 ## Projektbeskrivning
@@ -16,3 +12,5 @@ Såhär kan epoxi se ut:
 - Syfte: Kontrollera luftfuktigheten vid applicering av epoxi
 - Kontext: Stressiga miljöer ofta i industrilokaler med varierande funkt
 - Problem: Konsekvenser ifall man lägger epoxi vid för hög luftfuktighet: aldrig torkar, blåsbildning, bubblor, missfärgning, minskad hållbarhet! Konsekvenser vid för låg luftfuktighet är att plasten härdar för fort. 
+![bild på mätare](bilder_slutprojekt/istockphoto-1370439513-612x612.jpg)
+![bild på diagram](bilder_slutprojekt/Diagram_linje-2.png)
