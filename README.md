@@ -2,7 +2,7 @@
 ## Introduktion
 Epoxi är en form av tvåkomponentshärdplast som bland annat används som golvyta i lokaler så som industrier, storkök och garage. Epoxi är ett populärt alternativ då materialet är så pass slitstarkt. Epoxi är ett fuktkänsligt material och en för hög luftfuktighet gör att härdprocessen går för långsamt och man riskerar golvets hållbarhet. En för låg luftfuktighet gör istället att materialet härdar (torkar) för fort och processen blir extremt stressig. Därför är det av stor vikt att mäta luftfuktighet i lokaler där epoxi ska användas. 
 
-Såhär kan epoxi se ut:
+**Såhär kan Epoxi se ut:**
 ![Bild på epoxigolv](bilder_slutprojekt/image-000-1-830x701.jpg)
 
 ## Projektbeskrivning
