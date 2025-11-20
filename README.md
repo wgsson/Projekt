@@ -1,8 +1,7 @@
-# Projekt
-## Målgruppen: hantverkare som arbetar med fogfria golv industrigolv
-- Koppla mot app? För att effektivisera tiden
-- Luftfuktighet (humidity) i ett rum där epoxi hällts ut.
-- Konsekvenser ifall man lägger epoxi vid för hög luftfuktighet: aldrig torkar, blåsbildning, bubblor, missfärgning, minskad hållbarhet!
-- Konsekvenser vid för låg luftfuktighet är att plasten härdar för fort. 
-- Bristande kontroll = kostsamt och ej hållbart 
-- Kontexten: Ofta stressade
+# Digitalt system från sensor till visualisering
+## Projektbeskrivning
+- Målgrupp: yrkeshantverkare som arbetar med att installera fogfria industrigolv
+- Sensor: Luftfuktighetssensor kopplat mot app
+- Syfte: Kontrollera luffuktigheten vid applicering av epoxi
+- Kontext: Stressiga miljöer ofta i industrilokaler med varierande funkt
+- Problem: Konsekvenser ifall man lägger epoxi vid för hög luftfuktighet: aldrig torkar, blåsbildning, bubblor, missfärgning, minskad hållbarhet! Konsekvenser vid för låg luftfuktighet är att plasten härdar för fort. 
