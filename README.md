@@ -13,6 +13,6 @@ Epoxi är en form av tvåkomponentshärdplast som bland annat används som golvy
 - Kontext: Stressiga miljöer ofta i industrilokaler med varierande funkt
 - Problem: Konsekvenser ifall man lägger epoxi vid för hög luftfuktighet: att det inte torkar som det ska, bubblor kan bildas, missfärgning och minskad hållbarhet! Konsekvenser vid för låg luftfuktighet är att plasten härdar för fort. 
 - Kunskap: Genom att se trenden på luftfuktigheten under och innan torkningstiden så minimerar det risken för att materialet ska härda för snabbt eller för långsamt.
-- 
+  
 ![bild på mätare](bilder_slutprojekt/istockphoto-1370439513-612x612.jpg)
 ![bild på diagram](bilder_slutprojekt/Diagram_linje-2.png)
