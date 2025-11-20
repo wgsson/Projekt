@@ -11,11 +11,8 @@ Epoxi är en form av tvåkomponentshärdplast som bland annat används som golvy
 - Sensor: Luftfuktighetssensor kopplat mot app
 - Syfte: Kontrollera luftfuktigheten vid applicering av epoxi
 - Kontext: Stressiga miljöer ofta i industrilokaler med varierande funkt
-<<<<<<< HEAD
 - Problem: Konsekvenser ifall man lägger epoxi vid för hög luftfuktighet: aldrig torkar, blåsbildning, bubblor, missfärgning, minskad hållbarhet! Konsekvenser vid för låg luftfuktighet är att plasten härdar för fort. 
-![bild på mätare](bilder_slutprojekt/istockphoto-1370439513-612x612.jpg)
-![bild på diagram](bilder_slutprojekt/Diagram_linje-2.png)
-=======
 - Problem: Konsekvenser ifall man lägger epoxi vid för hög luftfuktighet: aldrig torkar, blåsbildning, bubblor, missfärgning, minskad hållbarhet! Konsekvenser vid för låg luftfuktighet är att plasten härdar för fort.
 - Kunskap: Vi kommer att visa genom både diagram och mätare hur trenden på luftfuktigheten går.
->>>>>>> 704b2972def16c5a7f076bf45b620595ca64c452
+![bild på mätare](bilder_slutprojekt/istockphoto-1370439513-612x612.jpg)
+![bild på diagram](bilder_slutprojekt/Diagram_linje-2.png)
