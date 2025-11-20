@@ -6,4 +6,3 @@
 - Konsekvenser vid för låg luftfuktighet är att plasten härdar för fort. 
 - Bristande kontroll = kostsamt och ej hållbart 
 - Kontexten: Ofta stressade
-hbub
