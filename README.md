@@ -5,4 +5,4 @@
 - Konsekvenser ifall man lägger epoxi vid för hög luftfuktighet: aldrig torkar, blåsbildning, bubblor, missfärgning, minskad hållbarhet!
 - Konsekvenser vid för låg luftfuktighet är att plasten härdar för fort. 
 - Bristande kontroll = kostsamt och ej hållbart 
-- Kontexten: Ofta stressade hantverkade. 
+- Kontexten: Ofta stressade
