@@ -12,7 +12,6 @@ Epoxi är en form av tvåkomponentshärdplast som bland annat används som golvy
 - Syfte: Kontrollera luftfuktigheten vid applicering av epoxi
 - Kontext: Stressiga miljöer ofta i industrilokaler med varierande funkt
 - Problem: Konsekvenser ifall man lägger epoxi vid för hög luftfuktighet: att det inte torkar som det ska, bubblor kan bildas, missfärgning och minskad hållbarhet! Konsekvenser vid för låg luftfuktighet är att plasten härdar för fort. 
-- Kunskap: Genom att se trenden på luftfuktigheten under och innan torkningstiden så minimerar det risken för att materialet ska härda för snabbt eller för långsamt.
-  
-![bild på mätare](bilder_slutprojekt/istockphoto-1370439513-612x612.jpg)
-![bild på diagram](bilder_slutprojekt/Diagram_linje-2.png)
+- Kunskap: Genom att se trenden på luftfuktigheten under och innan torkningstiden så minimerar det risken för att materialet ska härda för snabbt eller för långsamt. Vi kommer undersöka hur luftfuktigheten ändras under torkningstiden för att få ett estimat när nästa lager kan läggas.
+- Kommer att redovisas genom en Line Chart.
+<img width="652" height="373" alt="image" src="https://github.com/user-attachments/assets/f3a79cd3-c4de-4cd3-9ff0-9e37f19f7147" />
