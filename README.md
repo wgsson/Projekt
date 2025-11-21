@@ -1,6 +1,6 @@
 # Luftfuktighet inom hantverkarbranschen
 ## Introduktion
-Epoxi är en form av flytande massa (tvåkomponentshärdplast) som bland annat används som golvyta i lokaler så som industrier, storkök och garage. Man häller alltså ut Epoxi på golvytor och skrapar ut det för att få det jämnt. Epoxi är ett fuktkänsligt material och en för hög luftfuktighet gör att härdprocessen (torkningstiden) går för långsamt och man riskerar golvets hållbarhet. En för låg luftfuktighet gör istället att materialet härdar (torkar) för fort och processen blir extremt stressig. Därför är det av stor vikt att mäta luftfuktighet i lokaler där epoxi ska användas.  
+Epoxi är en form av flytande massa (tvåkomponentshärdplast) som bland annat används som golvyta i lokaler så som industrier, storkök och garage. Man häller alltså ut Epoxi på golvytor och skrapar ut det för att få det jämnt. Epoxi är ett fuktkänsligt material och en för hög luftfuktighet gör att härdprocessen går för långsamt och man riskerar golvets hållbarhet. Därför är det av stor vikt att mäta luftfuktighet i lokaler där epoxi ska användas.  
 
 **Såhär kan epoxi se ut:**
 
