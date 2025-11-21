@@ -7,7 +7,7 @@ Epoxi är en form av flytande massa (tvåkomponentshärdplast) som bland annat a
 ![Bild på epoxigolv](bilder_slutprojekt/image-000-1-830x701.jpg)
 
 ## Projektbeskrivning
-- Syfte: Kontrollera luftfuktigheten vid applicering av epoxi
+- Syfte: Minska risken att Epoxin ska torka för sakta eller för snabbt genom att kontrollera luftfuktigheten vid applicering av epoxi
 - Målgrupp: yrkeshantverkare som arbetar med Epoxi
 - Sensor: Luftfuktighetssensor kopplat mot app
 - Kontext: Stressiga miljöer ofta i industrilokaler med varierande fukt
