@@ -14,8 +14,7 @@ Epoxi är en form av flytande massa (tvåkomponentshärdplast) som bland annat a
 - Problemområden: Vid för högluftfuktighet torkar inte Epoxin som det ska, bubblor kan bildas, missfärgning och minskad hållbarhet! Vid för låg luftfuktighet är risken att Epoxin härdar (torkar) för fort. 
 - Kunskap: Genom att se trenden på luftfuktigheten under och innan applicering så minimerar det risken för att materialet ska härda för snabbt eller för långsamt. Vi kommer undersöka hur luftfuktigheten ändras under torkningstiden för att få ett estimat när nästa lager kan läggas.
 - Kommer att redovisas genom en Line Chart.
-<img width="652" height="373" alt="image" src="https://github.com/user-attachments/assets/f3a79cd3-c4de-4cd3-9ff0-9e37f19f7147" />
-
+  
 ## Optimala förhållanden
 Optimal RH vid applicering och torkning av Epoxi är >80. Yttemperaturen på området där Epoxi ska läggas ska vara minst 3 grader över daggpunkten. Optimal temperatur är +5 grader på yta, färg och luft.
 
