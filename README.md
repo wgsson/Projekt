@@ -16,8 +16,11 @@ Epoxi är en form av flytande massa (tvåkomponentshärdplast) som bland annat a
 - Kommer att redovisas genom en Line Chart.
 <img width="652" height="373" alt="image" src="https://github.com/user-attachments/assets/f3a79cd3-c4de-4cd3-9ff0-9e37f19f7147" />
 
+## Optimala förhållanden
+Optimal RH vid applicering och torkning av Epoxi är >80. Yttemperaturen på området där Epoxi ska läggas ska vara minst 3 grader över daggpunkten. Optimal temperatur är +5 grader på yta, färg och luft.
+
 ## Utfördande 
-Mätningen kommer utföras genom att placera DHT11-sensorn på ett väggfäste i utvald miljö/lokal där data över temperatur, luftfuktighet och tid kommer inhämtas. Datan kommer samlas in genom en mikrokontroller och visualiseras i ett webbgränssnitt/applikation. 
+Mätningen kommer utföras genom att placera DHT11-sensorn på ett väggfäste i utvald miljö/lokal där data över temperatur, luftfuktighet och tid kommer inhämtas. Datan kommer samlas in genom en mikrokontroller och visualiseras i ett webbgränssnitt/applikation.  
 
 ## Material 
 - Luftfuktighetssensor (DHT11)
