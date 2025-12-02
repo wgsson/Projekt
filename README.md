@@ -40,4 +40,5 @@ Mätningen kommer utföras genom att placera DHT11-sensorn på ett väggfäste i
 - Tänka på placering och visuella
 - Inte riktad mot ventiler eller öppna dörrar
 - Tex. Korg två krokar
-- Distans hur långt avstånd mellan taket och golvet, 
+- Distans hur långt avstånd mellan taket och golvet,
+- Syftet är att man ska ta med sin sensor, ett flexibelt fäste som är lätt att handskas med
