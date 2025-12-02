@@ -42,3 +42,4 @@ Mätningen kommer utföras genom att placera DHT11-sensorn på ett väggfäste i
 - Tex. Korg två krokar
 - Distans hur långt avstånd mellan taket och golvet,
 - Syftet är att man ska ta med sin sensor, ett flexibelt fäste som är lätt att handskas med
+- fästet ska kunna dras bort, hur ska man göra det utan att väggen förstörs, fästet ska vara som en liten burk typ med två krokar så att den hänger
