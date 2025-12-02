@@ -32,4 +32,4 @@ Mätningen kommer utföras genom att placera DHT11-sensorn på ett väggfäste i
 ## Vad ska mätas?
 - Tid
 - Luftfuktighet (RF%)
-- Temperatur
+- Temperatur är -5
