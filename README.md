@@ -23,7 +23,8 @@ Mätningen kommer utföras genom att placera DHT11-sensorn på ett väggfäste i
 
 ## Material 
 - Luftfuktighetssensor (DHT11)
-- Mikrokontroller (Arduino)
+- Mikrokontroller (ESP8266)
+- Biblotek Arduino IDE (DHT Sensor Library och Adafruit Unifield Sensor)
 - Någon form av webbgränssnitt för att visualisera mätvärden i realtid
 - Strömkälla (batteri)
 - Väggfäste till sensorn 
