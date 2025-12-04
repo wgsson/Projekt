@@ -1,48 +1,63 @@
-#include "ESP8266WiFi.h"
-#include "time.h"
+#include <ESP8266WiFi.h>
+#include <PubSubClient.h>
 #include "DHT.h"
+#include "time.h"
+#include <ArduinoMqttClient.h>
 
-// ---- DHT Inställningar ----
-#define DHTPIN D4          // Pin D4 (valfri digital pin på ESP32)
+
+#define DHTPIN D4
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
-// ---- WiFi Inställningar ----
+
 const char* ssid = "MDU_guest";
 const char* password = "Frozen202512";
 
-// ---- NTP (internet-tid) ----
-const char* ntpServer = "pool.ntp.org";
-const long gmtOffset_sec = 3600;         // Sverige UTC+1
-const int daylightOffset_sec = 0;     // Sommartid
+// ---- MQTT Inställningar ----
+const char* mqtt_server = "192.168.1.100"; // Byt till IP där Mosquitto körs
+const int mqtt_port = 1883;
 
-// ---- Funktion för att skriva tid ----
+WiFiClient espClient;
+PubSubClient client(espClient);
+MqttClient mqttClient(espClient);
+
+// ---- NTP ----
+const char* ntpServer = "pool.ntp.org";
+const long gmtOffset_sec = 3600;  // Sverige UTC+1
+const int daylightOffset_sec = 0;
+const char broker[] = "test.mosquitto.org";
+int port = 1883;
+const char topic[] = "Gsson";
+const char topic2[] = "Gsson2";
+
+const long interval = 8000;
+unsigned long previousMillis = 0;
+
+int count = 0;
+
 void printLocalTime() {
   struct tm timeinfo;
   if (!getLocalTime(&timeinfo)) {
     Serial.println("Kunde inte hämta tid");
     return;
   }
-
   char buffer[64];
   strftime(buffer, sizeof(buffer), "%A, %B %d %Y %H:%M:%S", &timeinfo);
-  
   Serial.println(buffer);
-  }
+}
+
 
 void setup() {
   Serial.begin(115200);
 
-  // Starta DHT11
+  // Starta DHT
   dht.begin();
   delay(2000);
 
   // Anslut WiFi
-  Serial.printf("Ansluter till WiFi: %s\n", ssid);
   WiFi.begin(ssid, password);
-
-  while (WiFi.status() != WL_CONNECTED) 
-  {
+  Serial.print("Ansluter till WiFi");
+  while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
@@ -51,23 +66,45 @@ void setup() {
   // Starta NTP
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
   Serial.println("NTP tid konfigurerad!");
+
+  if (!mqttClient.connect(broker, port)) {
+    Serial.print("MQTT connection failed! Error code =");
+    Serial.println(mqttClient.connectError());
+
+    while (1)
+    ;
+  }
+  Serial.println("You've connected to the MQTT broker!");
+  Serial.println();
+
 }
 
 void loop() {
-  // Läs av sensorn
+ mqttClient.poll();
+  // Läs av DHT11
   float humidity = dht.readHumidity();
   float temperature = dht.readTemperature();
 
-  // Kolla om värdena är giltiga
   if (isnan(humidity) || isnan(temperature)) {
     Serial.println("Fel vid läsning av DHT11!");
     delay(2000);
     return;
   }
-
-  // Skriv ut tid + sensorvärden
+  // Skriv tid och sensorvärden
   printLocalTime();
-  Serial.printf("  |  Fukt: %.1f%%  Temp: %.1f°C\n", humidity, temperature);
+  Serial.printf("Fukt: %.1f%%  Temp: %.1f°C\n", humidity, temperature);
 
-  delay(2000); // Mät var 2 sekund
+  // Skicka data till MQTT
+  mqttClient.beginMessage(topic);
+  mqttClient.printf("Luftfuktighet: ");
+  mqttClient.print(humidity);
+  mqttClient.endMessage();
+
+  mqttClient.beginMessage(topic);
+  mqttClient.printf("Temperatur: ");
+  mqttClient.print(temperature);
+  mqttClient.endMessage();
+
+  delay(2000); // Mät var 2 sekunder
+
 }
