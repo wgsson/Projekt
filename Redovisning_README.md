@@ -45,7 +45,7 @@ Magnetfäste
 - Jag har valt ett magnetfäste. Kapslingen fästs direkt på metall eller på en tunn metallplatta med tejp om väggen inte är metall. Det krävs inga verktyg, och väggarna blir inte skadade.
 - Kapslingen är liten, skyddar elektroniken och har ventilationshål så sensorn kan mäta luftflödet korrekt. Den sitter stabilt på rätt höjd men kan flyttas om man vill testa olika placeringar.
 - Fästet gör installationen snabb och enkel, ger pålitliga mätvärden och passar bra i olika arbetsmiljöer där epoxi används.
-- 
+
 
 ## Tidsplan
 # V.49: 
