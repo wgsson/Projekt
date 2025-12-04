@@ -1,118 +1,47 @@
-# Redovisning
+# EpoxiSense – Luftfuktighetsmätning för epoxi
 
 ## Syfte
-Syftet är att mäta och visualisera **luftfuktighet och temperatur i realtid** i lokaler där epoxi ska appliceras. Epoxi är mycket känsligt för fukt — för hög eller för låg luftfuktighet kan leda till dålig härdning, bubblor eller försämrad hållbarhet.  
-Projektet ska hjälpa hantverkare att enkelt se om förhållandena är optimala innan och under applicering.
+Mäta och visualisera luftfuktighet och temperatur i realtid i lokaler där epoxi appliceras. Hjälper hantverkare att undvika felhärdning.
 
 ---
 
-## Analys av användare och kontext
-### Målgrupp
-Yrkesverksamma hantverkare som arbetar med epoxi i:
-- Industrilokaler  
-- Garage  
-- Verkstäder  
-- Lager, storkök och förråd  
-
-### Kontext & behov
-- Stressiga arbetsmiljöer  
-- Lokaler med varierande fukt och temperatur  
-- Felaktiga förhållanden upptäcks ofta för sent  
-- Behov av **snabb, tydlig och mobil information**
-
-### Vad användarna behöver
-- Realtidsdata  
-- Enkelt att läsa av  
-- Trend över tid  
-- En sensor som är lätt att montera utan att skada väggar  
+## Målgrupp
+Yrkeshantverkare i industrilokaler, garage och verkstäder. Behov: snabbt, tydligt och mobil dataflöde.
 
 ---
 
-## Beskrivning av system
+## System
+- **Sensor:** DHT11 (temp + fukt)  
+- **Mikrokontroller:** ESP8266  
+- **Backend:** Node.js + MQTT (Mosquitto)  
+- **Frontend:** Webbsida med Chart.js  
 
-### Sensor & hårdvara
-- **DHT11** (mäter luftfuktighet och temperatur)  
-- **ESP8266** (mikrokontroller som läser och skickar datan)  
-- Strömkälla (USB/powerbank)  
-- Flexibelt väggfäste som:
-  - Kan hängas utan att skada yta  
-  - Inte sitter vid ventilation eller öppna dörrar  
-  - Är lätt att flytta mellan olika lokaler  
-
-### Kommunikation & mjukvara
-- **Arduino IDE**
-  - DHT Sensor Library  
-  - Adafruit Unified Sensor Library  
-- **MQTT** via Mosquitto  
-- **Node.js backend**  
-- **Chart.js** för visualisering  
+**Flöde:** ESP8266 → MQTT → Node.js → Webbläsare
 
 ---
 
-## Visualisering (Line Chart)
-Vi använder **Line Chart** eftersom den:
-- visar förändringar över tid tydligt  
-- passar för jämförelse mellan temperatur och luftfuktighet  
-- gör det enkelt att upptäcka risknivåer  
-- ger *kunskap*, inte bara siffror  
+## Visualisering
+Line Chart visar temperatur och luftfuktighet över tid. Ger snabb överblick över om förhållanden är optimala.
 
 ---
 
 ## Vad som mäts
-- **Luftfuktighet (RH%)**  
-- **Temperatur (°C)**  
-- **Tid** (NTP-server)  
+- Luftfuktighet (RH%)  
+- Temperatur (°C)  
+- Tid (NTP-stämpel)
 
 ---
 
-## Optimala förhållanden för epoxi
-- Luftfuktighet: **under 80% RH**  
-- Yttemperatur: **minst 3°C över daggpunkten**  
-- Rekommenderad temperatur: **≥ +5°C**  
-
-Felaktig luftfuktighet kan leda till:
-- Bubblor  
-- För långsam eller för snabb härdning  
-- Missfärgning  
-- Sprickor  
-- Förkortad livslängd  
-
----
-
-## Utförande
-1. DHT11 monteras i ett anpassat väggfäste.  
-2. ESP8266 läser av mätvärden regelbundet.  
-3. MQTT publicerar värden till en lokal Mosquitto-broker.  
-4. Backend tar emot värden och skickar dem vidare till frontend.  
-5. Webbsidan ritar upp en Line Chart i realtid.  
+## Optimala förhållanden
+- Luftfuktighet: <80% RH  
+- Temperatur: ≥5°C och minst 3°C över daggpunkten
 
 ---
 
 ## Material
-- DHT11 luftfuktighetssensor  
+- DHT11 sensor  
 - ESP8266 mikrokontroller  
 - Arduino IDE  
 - Mosquitto MQTT  
-- Node.js  
-- Chart.js  
-- Strömkälla  
-- Väggfäste  
-
----
-
-## Förväntat resultat och nytta
-Projektet ska resultera i:
-- En fungerande sensorstation för epoxi-arbetsmiljöer  
-- Realtidsvisualisering av luftfuktighet och temperatur  
-- Stabil MQTT-baserad dataöverföring  
-- En design som fungerar i verkliga arbetsmiljöer  
-
-**Nytta:**  
-Hantverkare får kontroll på klimatförhållandena och kan undvika felhärdning — vilket sparar både tid och kostnader.
-
----
-
-## Bildexempel
-**Så här kan epoxi se ut:**
-
-![Bild på epoxigolv](bilder_slutprojekt/image-000-1-830x701.jpg)
+- Node.js + Chart.js  
+- Strömkälla och väggfäste
