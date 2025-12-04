@@ -34,13 +34,7 @@ Line Chart visar temperatur och luftfuktighet över tid. Ger snabb överblick ö
 - Luftfuktighet: <80% RH  
 - Temperatur: ≥5°C och minst 3°C över daggpunkten
 
-## Material
-- DHT11 sensor  
-- ESP8266 mikrokontroller  
-- Arduino IDE  
-- Mosquitto MQTT  
-- NodeRED + Chart.js (Linechart)  
-- Strömkälla och väggfäste
+## Väggfäste
 
 ## Tidsplan
 # V.49: 
