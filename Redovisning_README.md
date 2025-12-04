@@ -48,7 +48,7 @@ Line Chart visar temperatur och luftfuktighet över tid. Ger snabb överblick ö
 # V.49: 
 - Sensor kopplad mot MQTT (klar)
 - Visualisering bestämd (klar)
-- Lägga upp en plan för väggfäste
+- Lägga upp en plan för väggfäste (klar)
 # V.50:
 - MQTT kopplad till visualiseringen
 - Starta arbete med fästet
