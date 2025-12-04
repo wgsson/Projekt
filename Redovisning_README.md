@@ -13,7 +13,7 @@ Yrkeshantverkare i industrilokaler, garage och verkstäder. Behov: snabbt, tydli
 ## System
 - **Sensor:** DHT11 (temp + fukt)  
 - **Mikrokontroller:** ESP8266  
-- **Backend:** Node.js + MQTT (Mosquitto)  
+- **Backend:** Node-red + MQTT (Mosquitto)  
 - **Frontend:** Webbsida med Chart.js  
 
 **Flöde:** ESP8266 → MQTT → Node.js → Webbläsare
