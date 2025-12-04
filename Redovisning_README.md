@@ -19,8 +19,7 @@ Yrkeshantverkare i industrilokaler, garage och verkstäder. Behov: snabbt, tydli
 -  **Flöde:** ESP8266 → MQTT → Node.js → Webbläsare
 
 ## Visualisering
-Line Chart visar temperatur och luftfuktighet över tid. Ger snabb överblick över om förhållanden är optimala.
-
+- **Line Chart** visar temperatur och luftfuktighet över tid. Ger snabb överblick över om förhållanden (Tidpunkt och luftfuktighet) är optimala.
 ---
 
 ## Vad som mäts
