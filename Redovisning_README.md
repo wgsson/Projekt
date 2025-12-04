@@ -17,12 +17,6 @@ Yrkeshantverkare i industrilokaler, garage och verkstäder. Behov: snabbt, tydli
 - **Backend:** NodeRED + MQTT (Mosquitto)
 -  **Frontend:** Webbsida med Chart.js (Point Styling)
 -  **Flöde:** ESP8266 → MQTT → Node.js → Webbläsare
--  
--  <img width="197" height="170" alt="image" src="https://github.com/user-attachments/assets/f0707d82-0cbd-48cf-850f-bc03e0eefbbc" />
-
--   <img width="566" height="317" alt="image" src="https://github.com/user-attachments/assets/38ee80b0-c74d-4b79-90b2-b4eec5ca588b" />
- 
----
 
 ## Visualisering
 Line Chart visar temperatur och luftfuktighet över tid. Ger snabb överblick över om förhållanden är optimala.
