@@ -39,7 +39,9 @@ Yrkeshantverkare i industrilokaler, garage och verkstäder. Behov: snabbt, tydli
 - Temperatur: ≥5°C och minst 3°C över daggpunkten
 
 ## Väggfäste
-- Jag har jobbat med hur vi ska fästa sensorn. Målet är att NodeMCU och DHT11 sitter skyddade och på rätt höjd för att mäta luftfuktighet och temperatur.
+Magnetfäste
+
+- Målet är att NodeMCU och DHT11 sitter skyddade och på rätt höjd för att mäta luftfuktighet och temperatur.
 - Jag har valt ett magnetfäste. Kapslingen fästs direkt på metall eller på en tunn metallplatta med tejp om väggen inte är metall. Det krävs inga verktyg, och väggarna blir inte skadade.
 - Kapslingen är liten, skyddar elektroniken och har ventilationshål så sensorn kan mäta luftflödet korrekt. Den sitter stabilt på rätt höjd men kan flyttas om man vill testa olika placeringar.
 - Fästet gör installationen snabb och enkel, ger pålitliga mätvärden och passar bra i olika arbetsmiljöer där epoxi används.
