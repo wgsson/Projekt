@@ -17,6 +17,10 @@ Yrkeshantverkare i industrilokaler, garage och verkstäder. Behov: snabbt, tydli
 - **Backend:** NodeRED + MQTT (Mosquitto)
 -  **Frontend:** Webbsida med Chart.js (Point Styling)
 -  **Flöde:** ESP8266 → MQTT → Node.js → Webbläsare
+-  **Data från DHT11 samt NTP-biblotek i terminalen via MQTT**
+  <img width="300" height="105" alt="image" src="https://github.com/user-attachments/assets/1592225c-118b-4701-9534-ca2e2fbd9dae" />
+
+
 
 ## Visualisering
 - **Line Chart** visar temperatur och luftfuktighet över tid. Ger snabb överblick över om förhållanden (Tidpunkt och luftfuktighet) är optimala.
