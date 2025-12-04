@@ -11,7 +11,7 @@ Yrkeshantverkare i industrilokaler, garage och verkstäder. Behov: snabbt, tydli
 ---
 
 ## System
-- **Sensor:** DHT11 (temp + fukt)  
+- **Sensor:** DHT11 (temp, fukt och tid)  
 - **Mikrokontroller:** ESP8266
 - **Arduino IDE** kodhantering
 - **Backend:** NodeRED + MQTT (Mosquitto)
