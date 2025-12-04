@@ -1,7 +1,8 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include "DHT.h"
-#include "time.h"
+#include <NTPClient.h>
+#include <WiFiUdp.h>
 #include <ArduinoMqttClient.h>
 
 
@@ -20,6 +21,8 @@ const int mqtt_port = 1883;
 WiFiClient espClient;
 PubSubClient client(espClient);
 MqttClient mqttClient(espClient);
+WiFiUDP ntpUDP;
+NTPClient timeClient(ntpUDP);
 
 // ---- NTP ----
 const char* ntpServer = "pool.ntp.org";
@@ -49,6 +52,7 @@ void printLocalTime() {
 
 void setup() {
   Serial.begin(115200);
+  timeClient.begin();
 
   // Starta DHT
   dht.begin();
@@ -81,6 +85,7 @@ void setup() {
 
 void loop() {
  mqttClient.poll();
+ timeClient.update();
   // Läs av DHT11
   float humidity = dht.readHumidity();
   float temperature = dht.readTemperature();
@@ -103,6 +108,11 @@ void loop() {
   mqttClient.beginMessage(topic);
   mqttClient.printf("Temperatur: ");
   mqttClient.print(temperature);
+  mqttClient.endMessage();
+
+  mqttClient.beginMessage(topic);
+  mqttClient.printf("Tid: ");
+  mqttClient.print(timeClient.getFormattedTime());
   mqttClient.endMessage();
 
   delay(2000); // Mät var 2 sekunder
