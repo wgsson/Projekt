@@ -43,5 +43,5 @@ Line Chart visar temperatur och luftfuktighet över tid. Ger snabb överblick ö
 - ESP8266 mikrokontroller  
 - Arduino IDE  
 - Mosquitto MQTT  
-- Node.js + Chart.js  
+- NodeREAD + Chart.js  
 - Strömkälla och väggfäste
