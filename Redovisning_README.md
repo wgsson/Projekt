@@ -23,17 +23,16 @@ Yrkeshantverkare i industrilokaler, garage och verkstäder. Behov: snabbt, tydli
 
 
 ## Visualisering
+# EpoxMonitor 
+- **Realtidsvisning**: Visar aktuell luftfuktighet, tid och temperatur direkt.
+- **Varningsfärger**: Varnar om värdena är för höga eller låga.
+- **Historisk data**: Möjlighet att se tidigare mätningar.
+- **Enkel layout**: Ren, enkel och undvika maximilism.
+- **Daggpunktvarning**: Visar om det finns risk för kondens på golvytan.
+- **Statusruta**: Ger en snabb, tydlig översikt över den aktuella situationen.
 - **Line Chart** visar temperatur och luftfuktighet över tid. Ger snabb överblick över om förhållanden (Tidpunkt och luftfuktighet) är optimala.
   
 ![bild på line craft](bilder_slutprojekt/linechart2.png)
-
-# EpoxMonitor 
-- Realtidsvisning: Visar aktuell luftfuktighet, tid och temperatur direkt.
-- Varningsfärger: Varnar om värdena är för höga eller låga.
-- Historisk data: Möjlighet att se tidigare mätningar.
-- Enkel layout: Ren, enkel och undvika maximilism.
-- Daggpunktvarning: Visar om det finns risk för kondens på golvytan.
-- Statusruta: Ger en snabb, tydlig översikt över den aktuella situationen.
 ---
 
 ## Vad som mäts
