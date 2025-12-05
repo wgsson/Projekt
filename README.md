@@ -44,11 +44,3 @@ Mätningen kommer utföras genom att placera DHT11-sensorn på ett väggfäste i
 - Syftet är att man ska ta med sin sensor, ett flexibelt fäste som är lätt att handskas med
 - fästet ska kunna dras bort, hur ska man göra det utan att väggen förstörs, fästet ska vara som en liten burk typ med två krokar så att den hänger
 
-## EpoxMonitor 
-- Realtidsvisning: Visar aktuell luftfuktighet, tid och temperatur direkt.
-- Linechart: Diagram som visar hur värdena ändras över tid.
-- Varningsfärger: Varnar om värdena är för höga eller låga.
-- Historisk data: Möjlighet att se tidigare mätningar.
-- Enkel layout: Ren, enkel och undvika maximilism.
-- Daggpunktvarning: Visar om det finns risk för kondens på golvytan.
-- Statusruta: Ger en snabb, tydlig översikt över den aktuella situationen.
