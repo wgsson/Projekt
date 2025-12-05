@@ -24,6 +24,7 @@ Yrkeshantverkare i industrilokaler, garage och verkstäder. Behov: snabbt, tydli
 
 ## Visualisering
 - **Line Chart** visar temperatur och luftfuktighet över tid. Ger snabb överblick över om förhållanden (Tidpunkt och luftfuktighet) är optimala.
+  
 ![bild på line craft](bilder_slutprojekt/linechart2.png)
 ---
 
