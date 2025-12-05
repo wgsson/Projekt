@@ -68,3 +68,6 @@ Magnetfäste
 - Fortsätta/koppla visualisering
 - Redovisa
 
+- # redovisning
+Ifall luftfuktigheten är under 80% så är beräknad torknigstid x antal timmar. 
+
