@@ -29,7 +29,6 @@ Yrkeshantverkare i industrilokaler, garage och verkstäder. Behov: snabbt, tydli
 
 # EpoxMonitor 
 - Realtidsvisning: Visar aktuell luftfuktighet, tid och temperatur direkt.
-- Linechart: Diagram som visar hur värdena ändras över tid.
 - Varningsfärger: Varnar om värdena är för höga eller låga.
 - Historisk data: Möjlighet att se tidigare mätningar.
 - Enkel layout: Ren, enkel och undvika maximilism.
