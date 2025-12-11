@@ -1,0 +1,209 @@
+const MEASUREMENT_INTERVAL = 10 * 60 * 1000; // 10 minuter i millisekunder
+const HISTORY_DURATION = 8 * 60 * 60 * 1000; // 8 timmar i millisekunder
+const dataPoints = [];
+const timeLabels = [];
+const colorData = [];
+const timestamps = [];
+
+let lastMeasurementTime = 0;
+let latestHumidity = null;
+
+// Funktion för att bestämma färg baserat på fuktnivå
+function getColor(humidity) {
+    if (humidity >= 20 && humidity <= 50) {
+        return 'rgba(75, 192, 75, 0.8)'; // Grön - optimalt
+    } else {
+        return 'rgba(255, 99, 99, 0.8)'; // Röd - över optimalt
+    }
+}
+
+function getBorderColor(humidity) {
+    if (humidity >= 20 && humidity <= 50) {
+        return 'rgb(75, 192, 75)'; // Grön kant
+    } else {
+        return 'rgb(255, 99, 99)'; // Röd kant
+    }
+}
+
+// Rensa gammal data (äldre än 8 timmar)
+function cleanOldData() {
+    const now = Date.now();
+    const cutoffTime = now - HISTORY_DURATION;
+    
+    while (timestamps.length > 0 && timestamps[0] < cutoffTime) {
+        timestamps.shift();
+        dataPoints.shift();
+        timeLabels.shift();
+        colorData.shift();
+    }
+}
+
+// Lägg till ny mätning
+function addMeasurement(humidity) {
+    const now = Date.now();
+    const timeString = new Date(now).toLocaleTimeString('sv-SE', { 
+        hour: '2-digit', 
+        minute: '2-digit' 
+    });
+
+    // Lägg till datapunkt
+    timestamps.push(now);
+    dataPoints.push(humidity);
+    timeLabels.push(timeString);
+    colorData.push(getColor(humidity));
+
+    // Rensa gammal data
+    cleanOldData();
+
+    // Uppdatera diagrammet
+    chart.update();
+}
+
+
+// Skapa diagrammet
+const ctx = document.getElementById('humidityChart').getContext('2d');
+const chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: timeLabels,
+        datasets: [{
+            label: 'Optimalt RH (%)',
+            data: dataPoints,
+            borderColor: '#28a745',
+            backgroundColor: 'rgba(75, 192, 192, 0.1)',
+            tension: 0.4,
+            fill: true,
+            pointBackgroundColor: colorData,
+            pointBorderColor: colorData,
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            segment: {
+                borderColor: (ctx) => {
+                    const value = ctx.p1.parsed.y;
+                    return value >= 20 && value <= 50 ? 'rgb(75, 192, 75)' : 'rgb(255, 99, 99)';
+                }
+            }
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100,
+                title: {
+                    display: true,
+                    text: 'RH%',
+                    font: {
+                        size: 40
+                    }
+                },
+                ticks: {
+                    font: {
+                        size: 14
+                    }
+                }
+            },
+            x: {
+                title: {
+                    display: true,
+                    text: 'Tid (senaste 8 timmarna)',
+                    font: {
+                        size: 40
+                    }
+                },
+                ticks: {
+                    font: {
+                        size: 14
+                    }
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    font: {
+                        size: 40
+                    }
+                }
+            },
+            tooltip: {
+                callbacks: {
+                    afterLabel: function(context) {
+                        const value = context.parsed.y;
+                        if (value >= 20 && value <= 50) {
+                            return 'Status: Optimalt';
+                        } else {
+                            return 'Status: Utanför optimalt område';
+                        }
+                    }
+                }
+            }
+        }
+    },
+    plugins: [{
+        id: 'optimalZone',
+        beforeDatasetsDraw: (chart) => {
+            const ctx = chart.ctx;
+            const yAxis = chart.scales.y;
+            const xAxis = chart.scales.x;
+            
+            ctx.save();
+            ctx.fillStyle = 'rgba(75, 192, 75, 0.1)';
+            ctx.fillRect(
+                xAxis.left,
+                yAxis.getPixelForValue(50),
+                xAxis.right - xAxis.left,
+                yAxis.getPixelForValue(20) - yAxis.getPixelForValue(50)
+            );
+            ctx.restore();
+        }
+    }]
+});
+
+// MQTT Setup med WSS (säker WebSocket)
+const client = new Paho.MQTT.Client(
+    "test.mosquitto.org", 
+    8081,
+    "clientId_" + parseInt(Math.random() * 100000)
+);
+
+client.onConnectionLost = (responseObject) => {
+    if (responseObject.errorCode !== 0) {
+        console.log("Anslutning förlorad: " + responseObject.errorMessage);
+        document.getElementById('status').className = 'status disconnected';
+        document.getElementById('status').textContent = 'Frånkopplad: ' + responseObject.errorMessage;
+    }
+};
+
+client.onMessageArrived = (message) => {
+    console.log("Meddelande mottaget: " + message.payloadString);
+    const humidity = parseFloat(message.payloadString);
+    
+    if (!isNaN(humidity)) {
+        latestHumidity = humidity;
+        const now = Date.now();
+
+        // Uppdatera nuvarande värde med färgkodning
+        const valueElement = document.getElementById('currentValue');
+        valueElement.textContent = humidity.toFixed(1) + '%';
+        
+        if (humidity >= 20 && humidity <= 50) {
+            valueElement.style.color = '#28a745'; // Grön
+        } else {
+            valueElement.style.color = '#dc3545'; // Röd
+        }
+
+        // Lägg till mätning endast var 10:e minut
+        if (now - lastMeasurementTime >= MEASUREMENT_INTERVAL) {
+            addMeasurement(humidity);
+            lastMeasurementTime = now;
+            console.log("Ny mätning sparad: " + humidity + "% vid " + new Date(now).toLocaleTimeString('sv-SE'));
+        } else {
+            const nextMeasurement = new Date(lastMeasurementTime + MEASUREMENT_INTERVAL);
+            console.log("Väntar på nästa mätning vid: " + nextMeasurement.toLocaleTimeString('sv-SE'));
+        }
+    }
+};
