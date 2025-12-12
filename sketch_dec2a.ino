@@ -31,9 +31,10 @@ const int daylightOffset_sec = 0;
 const char broker[] = "test.mosquitto.org";
 int port = 1883;
 const char topic[] = "Gsson";
-const char topic2[] = "Gsson2";
+const char topic2[] = "Gsson/temp";
+const char topic3[] = "Gsson/RH";
 
-const long interval = 8000;
+const long interval = 20000;
 unsigned long previousMillis = 0;
 
 int count = 0;
@@ -82,39 +83,40 @@ void setup() {
   Serial.println();
 
 }
-
 void loop() {
- mqttClient.poll();
- timeClient.update();
-  // Läs av DHT11
-  float humidity = dht.readHumidity();
-  float temperature = dht.readTemperature();
+  mqttClient.poll();
+  timeClient.update();
+  
+  unsigned long currentMillis = millis();
+  
+  if (currentMillis - previousMillis >= interval) {
+    previousMillis = currentMillis;
+    
+    // Läs av DHT11
+    float humidity = dht.readHumidity();
+    float temperature = dht.readTemperature();
 
-  if (isnan(humidity) || isnan(temperature)) {
-    Serial.println("Fel vid läsning av DHT11!");
-    delay(2000);
-    return;
+    if (isnan(humidity) || isnan(temperature)) {
+      Serial.println("Fel vid läsning av DHT11!");
+      return;
+    }
+    
+    // Skriv tid och sensorvärden
+    printLocalTime();
+    Serial.printf("Fukt: %.1f%%  Temp: %.1f°C\n", humidity, temperature);
+
+    // Skicka data till MQTT
+    mqttClient.beginMessage(topic3);
+    mqttClient.print(humidity);
+    mqttClient.endMessage();
+
+    mqttClient.beginMessage(topic2);
+    mqttClient.print(temperature);
+    mqttClient.endMessage();
+
+    mqttClient.beginMessage(topic);
+    mqttClient.printf("Tid: ");
+    mqttClient.print(timeClient.getFormattedTime());
+    mqttClient.endMessage();
   }
-  // Skriv tid och sensorvärden
-  printLocalTime();
-  Serial.printf("Fukt: %.1f%%  Temp: %.1f°C\n", humidity, temperature);
-
-  // Skicka data till MQTT
-  mqttClient.beginMessage(topic);
-  mqttClient.printf("Luftfuktighet: ");
-  mqttClient.print(humidity);
-  mqttClient.endMessage();
-
-  mqttClient.beginMessage(topic);
-  mqttClient.printf("Temperatur: ");
-  mqttClient.print(temperature);
-  mqttClient.endMessage();
-
-  mqttClient.beginMessage(topic);
-  mqttClient.printf("Tid: ");
-  mqttClient.print(timeClient.getFormattedTime());
-  mqttClient.endMessage();
-
-  delay(2000); // Mät var 2 sekunder
-
 }
